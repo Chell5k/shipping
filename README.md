@@ -12,6 +12,9 @@ This project is a React app which displays details for a list of products, such 
 
 ## Screenshots
 ![](./doc_imgs/shipping-1.png)
+![](./doc_imgs/shipping-2.png)
+
+Observe that the delivery date for product 1 is pushed out to May 1 in the second screenshot when its shipOnWeekends status is set to false.
 
 ## Project Description
 

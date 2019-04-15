@@ -3,7 +3,7 @@
       "productId": 1,
       "productName": "Crayons",
       "inventoryQuantity": 43,
-      "shipOnWeekends": true,
+      "shipOnWeekends": false,
       "maxBusinessDaysToShip": 13
   },
   {
