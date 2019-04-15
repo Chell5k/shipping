@@ -9,12 +9,19 @@ Table of Contents
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)  
 # Project Overview
 
-This project is a React app which displays details for a list of products, such as product id number, product name, amount in inventory, etc. The app will calculate the delivery date of each product based on a maximum number of shipping days, and a flag indicating whether the product ships on weekends or just business days.
+This project is a React app which displays details for a list of products, such as product id number, product name, amount in inventory, etc. The app will calculate the ship date of a product based on a maximum number of shipping days, and a flag indicating whether the product ships on weekends or just business days.
 
 ## Installation
 
-This project was built with node version  v11.13.0, npx version 6.7.0. The project also uses Materialize CSS.
+This project was built using create-react-app with node version  v11.13.0 and npx version 6.7.0. The project also uses Materialize CSS (visit <https://materializecss.com> for more information.)
 
+The app runs from a project directory named "shipping".  
+Clone the repo, and execute the following:  
+```bash
+cd shipping
+npm install
+npm start
+```
 ## Project Description
 Domain: e-Commerce Shipping  
 Interface: Web UI (SPA)
@@ -27,5 +34,5 @@ Basic information for each product (product #, name, amount in stock) is display
 ![](./doc_imgs/shipping-1.png)
 ![](./doc_imgs/shipping-2.png)
 
-Observe that the ship date for product 1 is pushed out to May 1 in the second screenshot when its shipOnWeekends status is set to false.
+> Observe that the ship date for product 1 is pushed out to May 1 in the second screenshot when its shipOnWeekends status is set to false.
 
