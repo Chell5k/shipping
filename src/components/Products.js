@@ -1,7 +1,7 @@
 import React from 'react';
 /*
 function: CalcShipDate
-Calculate delivery date, given a trip duration, and a status for weekend shipping.
+Calculate ship date, given a time to ship (duration), and a status for weekend shipping.
 */
 const CalcShipDate = ({duration, shipOnWeekends}) => {
   //check shipping duration. if not 1 or greater, return.
@@ -9,11 +9,11 @@ const CalcShipDate = ({duration, shipOnWeekends}) => {
     return 'Check with vendor'
   }
   /*
-  deliveryDate is set temporarily to the shipping start date, which is the current day.
-  At end of function, it will be assigned the value of delivery date.
+  shipDate is set temporarily to the shipping start date, which is the current day.
+  At end of function, it will be assigned the date when the product ships.
   */
-  const deliveryDate = new Date();
-  /*shipDays represents the travel status of each day of the week.
+  const shipDate = new Date();
+  /*shipDays represents the shipping status of each day of the week.
   Default setting is true for week days and false for non-shipping days.
   */
   const shipDays = [
@@ -29,28 +29,29 @@ const CalcShipDate = ({duration, shipOnWeekends}) => {
     shipDays[0] = true;
     shipDays[6] = true;
   }
-  //daysTraveled corresponds to shipping duration. It will exclude weekends if shipOnWeekends is false.
-  let daysTraveled = 0;
+  //shipDayCount corresponds to shipping duration. It will exclude weekends if shipOnWeekends is false.
+  let shipDayCount = 0;
   //start is the first day of the trip. Values range from 0-6, 0=>Sunday, 1=>Monday, etc.
-  let start = deliveryDate.getDate();
-  //calendarDays is the actual number of elapsed days for the trip.
+  const start = shipDate.getDate();
+  //calendarDays is the actual number of elapsed days for shipping.
   let calendarDays = 0;
   let day;
-  while (daysTraveled < duration) {
+  while (shipDayCount < duration) {
     calendarDays++;
-    //Figure out which day of the week it is so we can compare to shipDays.
+    //Figure out which day of the week it is so we can determine if it is
+    // a valid ship day.
     day = (calendarDays === 1 ? start : ++day ) % 7;
-    let validTravelDay = shipDays[day];
-    if (validTravelDay) {
-      daysTraveled++;
+    let validShipDay = shipDays[day];
+    if (validShipDay) {
+      shipDayCount++;
     }
   }
   /*
   When we calculated elapsed days, we included the start day. So a two day trip includes the start day (day 1) and the next shipping day. But, Javascript date objects don't include the start day, so we subtract 1.
   */
-  const futureDate = deliveryDate.getDate() + (--calendarDays);
-  deliveryDate.setDate(futureDate);
-  return deliveryDate.toLocaleDateString('en-US');
+  const futureDate = shipDate.getDate() + (--calendarDays);
+  shipDate.setDate(futureDate);
+  return shipDate.toLocaleDateString('en-US');
 }
 
 const Products = ({products}) => {
