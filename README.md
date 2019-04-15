@@ -2,10 +2,11 @@ Table of Contents
 =================
 
    * [Project Overview](#project-overview)
+      * [Installation](#installation)
       * [Project Description](#project-description)
-      * [Components](#components)
+      * [Screenshots](#screenshots)
 
-Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)  
 # Project Overview
 
 This project is a React app which displays details for a list of products, such as product id number, product name, amount in inventory, etc. The app will calculate the delivery date of each product based on a maximum number of shipping days, and a flag indicating whether the product ships on weekends or just business days.
@@ -15,7 +16,7 @@ This project is a React app which displays details for a list of products, such 
 This project was built with node version  v11.13.0, npx version 6.7.0. The project also uses Materialize CSS.
 
 ## Project Description
-Domain: e-Commerce Shipping
+Domain: e-Commerce Shipping  
 Interface: Web UI (SPA)
 
 The React app retrieves a product list using the Fetch API from a JSON file. The fetch command can be swapped out seamlessly for a live API call.
