@@ -1,10 +1,12 @@
 Table of Contents
 =================
 
+   * [Table of Contents](#table-of-contents)
    * [Project Overview](#project-overview)
       * [Installation](#installation)
       * [Project Description](#project-description)
       * [Screenshots](#screenshots)
+         * [Attribution](#attribution)
  
 # Project Overview
 
